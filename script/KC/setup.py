@@ -19,7 +19,7 @@ loading = widgets.Output()
 
 ENVNAME, ENVBASE, ENVHOME = None, None, None
 env_list = {
-    'Colab': ('/content', '/content', 'COLAB_JUPYTER_TOKEN'),
+    'Colab': ('/notebooks', '/notebooks', 'COLAB_JUPYTER_TOKEN'),
     'Kaggle': ('/kaggle', '/kaggle/working', 'KAGGLE_DATA_PROXY_TOKEN')
 }
 for envname, (envbase, envhome, envvar) in env_list.items():
@@ -39,7 +39,7 @@ P = '\033[38;5;135m'
 ORANGE = '\033[38;5;208m'
 AR = f'{ORANGE}▶{RST}'
 ERR = f'{P}[{RST}{R}ERROR{RST}{P}]{RST}'
-IMG = 'https://github.com/gutris1/segsmaker/raw/main/script/loading.png'
+IMG = 'https://github.com/worndois/segsmaker/raw/main/script/loading.png'
 
 HOME = Path(ENVHOME)
 BASEPATH = Path(ENVBASE)
@@ -147,7 +147,7 @@ def install_tunnel():
     SyS(f'chmod +x {USR}/cl')
 
     path = PY / 'lib/python3.10/site-packages/gradio_tunneling/main.py'
-    SyS(f'pip install -q gradio-tunneling && wget -qO {path} https://github.com/gutris1/segsmaker/raw/main/script/gradio-tunnel.py')
+    SyS(f'pip install -q gradio-tunneling && wget -qO {path} https://github.com/worndois/segsmaker/raw/main/script/gradio-tunnel.py')
 
     bins = {
         'zrok': {
@@ -290,7 +290,7 @@ def webui_req(U, W, M):
     CD(W)
 
     if U in ['A1111', 'Forge', 'ComfyUI', 'ReForge']:
-        pull(f'https://github.com/gutris1/segsmaker {U.lower()} {W}')
+        pull(f'https://github.com/worndois/segsmaker {U.lower()} {W}')
 
     elif U == 'SwarmUI':
         M.mkdir(parents=True, exist_ok=True)
